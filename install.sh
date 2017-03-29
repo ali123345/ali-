@@ -1,17 +1,11 @@
 sudo apt-get update
 
 
-cd EVO_TEAM 
+cd smilev2
 
-chmod +x evo.sh
+chmod +x smile.sh
 
-./evo.sh install
+./smile.sh install
 
-./evo.sh
+./smile.sh
 
-
-
---install.sh with lua by EVO_TEAM
---ch: @dev_evo
---botdev: @EVOtmBot
---devlober: @abod_evo

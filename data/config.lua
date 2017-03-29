@@ -17,6 +17,7 @@ do local _ = {
     "tools",
     "reply",
     "echo",
+    "addreplay", 
     "info"
   },
   info_text = "",

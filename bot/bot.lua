@@ -66,6 +66,8 @@ function create_config( )
 		"msg-checks",
 		"plugins",
 		"tools",
+		"echo",	
+		"addreplay",	
 		"info"
 	},
     sudo_users = {115124695},

@@ -13,7 +13,7 @@ local lang = redis:get(hash)
     if msg.text then
   if msg.text:match("(.*)") then
     if not data[tostring(msg.to.id)] and not redis:get(auto_leave) and not is_admin(msg) then
-  tdcli.sendMessage(msg.to.id, "", 0, "_This Is Not One Of My_ *Groups*", 0, "md")
+  tdcli.sendMessage(msg.to.id, "", 0, "*i don't have this GB in my list 🌞*", 0, "md")
   tdcli.changeChatMemberStatus(chat, our_id, 'Left', dl_cb, nil)
       end
    end
@@ -178,9 +178,9 @@ end
    tdcli.unpinChannelMessage(msg.to.id)
           end
     if lang then
-     tdcli.sendMessage(msg.to.id, msg.id, 0, '<b>User ID :</b> <code>'..msg.from.id..'</code>\n<b>Username :</b> '..('@'..msg.from.username or '<i>No Username</i>')..'\n<i>شما اجازه دسترسی به سنجاق پیام را ندارید، به همین دلیل پیام قبلی مجدد سنجاق میگردد</i>', 0, "html")
+     tdcli.sendMessage(msg.to.id, msg.id, 0, '<b>User ID :</b> <code>'..msg.from.id..'</code>\n<b>Username :</b> '..('@'..msg.from.username or '<i>No Username</i>')..'\n<i>   التثبيت مقفل هنا ¦❌</i>', 0, "html")
      elseif not lang then
-    tdcli.sendMessage(msg.to.id, msg.id, 0, '<b>User ID :</b> <code>'..msg.from.id..'</code>\n<b>Username :</b> '..('@'..msg.from.username or '<i>No Username</i>')..'\n<i>You Have Not Permission To Pin Message, Last Message Has Been Pinned Again</i>', 0, "html")
+    tdcli.sendMessage(msg.to.id, msg.id, 0, '<b>User ID 💡¦</b> <code>'..msg.from.id..'</code>\n<b>Username 💡¦</b> '..('@'..msg.from.username or '<i>No Username</i>')..'\n<i> pin msg is locked ¦‼️</i>', 0, "html")
           end
       end
   end
@@ -436,9 +436,9 @@ else
    del_msg(chat, msg.id)
     kick_user(user, chat)
    if not lang then
-  tdcli.sendMessage(chat, msg.id, 0, "_User_ "..user_name.." `[ "..user.." ]` _has been_ *kicked* _because of_ *flooding*", 0, "md")
+  tdcli.sendMessage(chat, msg.id, 0, "_User_ "..user_name.." `[ "..user.." ]` *kicked out becouse he flooding ✔️*", 0, "md")
    elseif lang then
-  tdcli.sendMessage(chat, msg.id, 0, "*User* "..user_name.." `[ "..user.." ]` *🚸┋تم طرده لرسائله المتكررة* ", 0, "md")
+  tdcli.sendMessage(chat, msg.id, 0, "*User* "..user_name.." `[ "..user.." ]` *✔️تم طرده لانه حاول التفليش* ", 0, "md")
     end
 redis:setex('sender:'..user..':flood', 30, true)
       end
@@ -453,4 +453,7 @@ return {
 	patterns = {},
 	pre_process = pre_process
 }
---End msg_checks.lua--
+-- by abo skrop
+-- @iq_100k
+-- smile team
+-- @porgramer2017

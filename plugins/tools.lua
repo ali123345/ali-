@@ -896,15 +896,15 @@ end
 					redis:set('CheckExpire::'..msg.to.id)
 				end
 				if lang then
-					tdcli.sendMessage(msg.to.id, msg.id_, 1, 'تم تعدیل البوت بنجاح🐝💛\nمده تفعیل البوت فی المجموعه ل '..matches[2]..' تم تعدیل الیوم🌟...', 1, 'md')
-					tdcli.sendMessage(SUDO, 0, 1, 'البوت فی المجموعه🎴💘 '..matches[2]..' ل مده `'..msg.to.id..'` تم تمدیده🐝🌟', 1, 'md')
-				else
-					tdcli.sendMessage(msg.to.id, msg.id_, 1, 'تم تعدیل البوت بنجاح🐝💛\nمده تفعیل البوت فی المجموعه ل '..matches[2]..' تم تعدیل الیوم🌟...', 1, 'md')
-					tdcli.sendMessage(SUDO, 0, 1, 'البوت فی المجموعه🎴💘 '..matches[2]..' ل مده`'..msg.to.id..'` تم تمدیده🐝🌟', 1, 'md')
+					tdcli.sendMessage(msg.to.id, msg.id_, 1, '🗿💛\nتم شحن وقت التفعيل ل '..matches[2]..' تم شحن البوت🌟...', 1, 'md')
+                                        tdcli.sendMessage(SUDO, 0, 1, ' شحن البوت في مجموعه‼️ '..matches[2]..' ل مدة '..msg.to.id..' تم تمدیده✔️', 1, 'md')
+                        else
+					tdcli.sendMessage(msg.to.id, msg.id_, 1, '🗿💛\nتم شحن وقت التفعيل ل '..matches[2]..' تم شحن البوت🌟...', 1, 'md')
+                                        tdcli.sendMessage(SUDO, 0, 1, ' شحن البوت في مجموعه‼️ '..matches[2]..' ل مدة '..msg.to.id..' تم تمدیده✔️', 1, 'md')
 				end
 			else
 				if lang then
-					tdcli.sendMessage(msg.to.id, msg.id_, 1, '_تعداد روزها باید عددی از 1 تا 1000 باشد._', 1, 'md')
+					tdcli.sendMessage(msg.to.id, msg.id_, 1, '_ اختر من 1 الى 1000 فقط ‼️    ._', 1, 'md')
 					else
 					tdcli.sendMessage(msg.to.id, msg.id_, 1, '_Expire days must be between 1 - 1000_', 1, 'md')
 				end

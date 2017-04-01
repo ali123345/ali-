@@ -68,6 +68,7 @@ function create_config( )
 		"tools",
 		"echo",	
 		"addreplay",	
+		"update",
 		"info"
 	},
     sudo_users = {115124695},

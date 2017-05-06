@@ -537,7 +537,7 @@ local function run(msg, matches)
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
  if tonumber(msg.from.id) == SUDO then
-if matches[1] == "clear cache" then
+if matches[1] == "حذف البيانات" then
      run_bash("rm -rf ~/.telegram-cli/data/sticker/*")
      run_bash("rm -rf ~/.telegram-cli/data/photo/*")
      run_bash("rm -rf ~/.telegram-cli/data/animation/*")
@@ -549,7 +549,7 @@ if matches[1] == "clear cache" then
      run_bash("rm -rf ~/.telegram-cli/data/document/*")
      run_bash("rm -rf ~/.telegram-cli/data/profile_photo/*")
      run_bash("rm -rf ~/.telegram-cli/data/encrypted/*")
-    return "*All Cache Has Been Cleared*"
+    return "_تم حذف جميع بيانات الكروبات في السيرفر 📍_"
    end
 if matches[1] == "رفع مطور" then
 if not matches[2] and msg.reply_id then
@@ -896,11 +896,11 @@ end
 					redis:set('CheckExpire::'..msg.to.id)
 				end
 				if lang then
-					tdcli.sendMessage(msg.to.id, msg.id_, 1, '🗿💛\nتم شحن وقت التفعيل ل '..matches[2]..' تم شحن البوت🌟...', 1, 'md')
-                                        tdcli.sendMessage(SUDO, 0, 1, ' شحن البوت في مجموعه‼️ '..matches[2]..' ل مدة '..msg.to.id..' تم تمدیده✔️', 1, 'md')
+					tdcli.sendMessage(msg.to.id, msg.id_, 1, '_عزيزي المطور_💛\n_تم شحن مده التفعيل للبوت في المجموعه ل_ '..matches[2]..' يوم🌟...', 1, 'md')
+                                        tdcli.sendMessage(SUDO, 0, 1, ' عزيزي المطور تم تجديد مده الاشتراك لمده‼️ '..matches[2]..' يوم📍 '..msg.to.id..' بنجاح✔️', 1, 'md')
                         else
-					tdcli.sendMessage(msg.to.id, msg.id_, 1, '🗿💛\nتم شحن وقت التفعيل ل '..matches[2]..' تم شحن البوت🌟...', 1, 'md')
-                                        tdcli.sendMessage(SUDO, 0, 1, ' شحن البوت في مجموعه‼️ '..matches[2]..' ل مدة '..msg.to.id..' تم تمدیده✔️', 1, 'md')
+					tdcli.sendMessage(msg.to.id, msg.id_, 1, '_عزيزي المطور_💛\n_تم شحن مده التفعيل للبوت في المجموعه ل_ '..matches[2]..' يوم🌟...', 1, 'md')
+                                        tdcli.sendMessage(SUDO, 0, 1, ' عزيزي المطور تم تجديد مده الاشتراك لمده‼️ '..matches[2]..' يوم📍 '..msg.to.id..' بنجاح✔️', 1, 'md')
 				end
 			else
 				if lang then
@@ -1191,106 +1191,84 @@ local hash = 'auto_leave_bot'
 if matches[1] == "اوامر المطور" and is_mod(msg) then
 if not lang then
 text = [[
+❰ _اوامر المطورين في المجموعه _❱
 
-_ sudo smile Bot v2 Help :_
 
-*!visudo* `[username|id|reply]`
-_Add Sudo_
+💡¦ اللغه عربي 【لتعيين لغه البوت    】_
+💡¦ _اللغه انكلش 【لتعيين لغه البوت】_
 
-*!desudo* `[username|id|reply]`
-_Demote Sudo_
 
-*!sudolist *
-_Sudo(s) list_
+💡¦ _تفعيل 【لتفعيل البوت】_
+💡¦ تعطيل 【لتعطيل البوت】_
 
-*!adminprom* `[username|id|reply]`
-_Add admin for bot_
+💡¦ _الترحيب تشغيل 【لتفعيل الترحيب】_
+💡¦ _الترحيب تعطيل 【لتعطيل الترحيب 】_
 
-*!admindem* `[username|id|reply]`
-_Demote bot admin_
+💡¦ _ضع ترحيب 【لوضع ترحيب】_
 
-*!adminlist *
-_Admin(s) list_
+💡¦ _حذف البيانات 【لتسريع البوت】_
 
-*!leave *
-_Leave current group_
+💡¦ _رفع مسؤول_
+📌¦ لاضافه مسوؤل في البوت
 
-*!autoleave* `[disable/enable]`
-_Automatically leaves group_
+💡¦_تنزيل مسؤول_
+📌¦_لحذف مسؤول البوت_
 
-*!creategroup* `[text]`
-_Create normal group_
+💡¦ _المسؤولين_
+📌¦ _لعرض قائمه المسؤولين_
 
-*!createsuper* `[text]`
-_Create supergroup_
+*💡¦ charge + المده*
+📌¦_لوضع وقت للبوت_
 
-*!tosuper *
-_Convert to supergroup_
+💡¦ _الادمنيه_
+📌¦_لعرض قائمه الادمنيه_
 
-*!chats*
-_List of added groups_
+💡¦_غادر_
+📌¦_لجعل البوت يغادر المجموعه_
 
-*!join* `[id]`
-_Adds you to the group_
+💡¦_الخروج التلقائي【تفعيل/تعطيل】_
+📌¦_لتفعيل وتعطيل الخروج التلقائي_
 
-*!rem* `[id]`
-_Remove a group from Database_
+💡¦_انشاء مجموعة 【اسم المجموعه】_
+📌¦ _لصنع مجموعة_
 
-*!import* `[link]`
-_Bot joins via link_
+💡¦ _سوبر كروب【نص】_
+📌¦ _لترقية المجموعة_
 
-*!setbotname* `[text]`
-_Change bot's name_
+💡¦ _دعوة 【ايدي الكروب】_
+📌¦ _لدخول البوت عن طريق الايدي_
 
-*!setbotusername* `[text]`
-_Change bot's username_
+💡¦ _مسح【ايدي الكروب】_
+📌¦ _حذف المجموعه عن طريق الايدي_
 
-*!delbotusername *
-_Delete bot's username_
+💡¦ _دخول【رابط المجموعة】_
+📌¦ _لدخول البوت عن طريق الايدي_
 
-*!markread* `[off/on]`
-_Second mark_
+💡¦ _اسم البوت 【اسم للبوت】_
+📌¦ _لتغيير اسم البوت_
 
-*!broadcast* `[text]`
-_Send message to all added groups_
+💡¦ _معرف البوت 【معرف للبوت】_
+📌¦ _لتغيير معرف البوت_
 
-*!sendfile* `[folder] [file]`
-_Send file from folder_
+💡¦ _حذف معرف البوت_
+📌¦ _لحذف معرف البوت_
 
-*!sendplug* `[plug]`
-_Send plugin_
+💡¦ _علامة القراءة 【تشغيل/تعطيل】_
+📌¦ _لتشغيل وتعطيل علامة القراءة_
 
-*!save* `[plugin name] [reply]`
-_Save plugin by reply_
+💡¦ _اذاعه 【نص】_
+📌¦ _لارسال رساله لجميع كروبات البوت_
 
-*!savefile* `[address/filename] [reply]`_Save File by reply to specific folder_
+💡¦ _نشر  【نص】【ايدي الكروب】_
+📌¦_ارسال رساله لكروب معين_
 
-*!clear cache*
-_Clear All Cache Of .telegram-cli/data_
+💡¦ _دعوة 【ايدي الكروب】_
+📌¦ _دعوة البوت عن طريق الايدي_
 
-*!check*
-_Stated Expiration Date_
+💡¦ _غادر 【ايدي الكروب】_
+📌¦ _لمغادرة البوت عن طريق الايدي_
 
-*!check* `[GroupID]`
-_Stated Expiration Date Of Specific Group_
-*!charge* `[GroupID]` `[Number Of Days]`
-_Set Expire Time For Specific Group_
-
-*!charge* `[Number Of Days]`
-_Set Expire Time For Group_
-
-*!jointo* `[GroupID]`
-_Invite You To Specific Group_
-
-*!leave* `[GroupID]`
-_Leave Bot From Specific Group_
-_You can use_ *[!/#]* _at the beginning of commands._
-
-`This help is only for sudoers/bot admins.`
- 
-*This means only the sudoers and its bot admins can use mentioned commands.*
-
-*Good luck ;)*]]
+تابع قناه البوت 💙✨ @porgramer2017]]
 tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, 'md')
 else
 
@@ -1310,6 +1288,8 @@ text = [[
 
 💡¦ _ضع ترحيب 【لوضع ترحيب】_
 
+💡¦ _حذف البيانات 【لتسريع البوت】_
+
 💡¦ _رفع مسؤول_
 📌¦ لاضافه مسوؤل في البوت
 
@@ -1319,7 +1299,7 @@ text = [[
 💡¦ _المسؤولين_
 📌¦ _لعرض قائمه المسؤولين_
 
-*💡¦ charge 1000*
+*💡¦ charge + المده*
 📌¦_لوضع وقت للبوت_
 
 💡¦ _الادمنيه_
@@ -1333,9 +1313,6 @@ text = [[
 
 💡¦_انشاء مجموعة 【اسم المجموعه】_
 📌¦ _لصنع مجموعة_
-
-💡¦ _ترقية المجموعة【نص】_
-📌¦ _لتحويل الكروب سوبر والترقيه_
 
 💡¦ _سوبر كروب【نص】_
 📌¦ _لترقية المجموعة_
@@ -1400,7 +1377,7 @@ patterns = {
 "^(ترقية المجموعة) (.*)$",
 "^(سوبر كروب)$",
 "^(المجموعات)$",
-"^[!/#](clear cache)$",
+"^(حذف البيانات)$",
 "^(دعوة) (.*)$",
 "^(مسح) (.*)$",
 "^(دخول) (.*)$",

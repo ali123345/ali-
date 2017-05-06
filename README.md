@@ -1,6 +1,4 @@
 
-¦~ </> вσт ѕмιℓє V2:
-مطور:
 🔹 # smile_TEAM
 🔹 # [porgramer2017](https://telegram.me/porgramer2017)
 

@@ -3244,9 +3244,9 @@ end
 		data[tostring(chat)]['setwelcome'] = matches[2]
 	    save_data(_config.moderation.data, data)
        if not lang then
-		return "_Welcome Message Has Been Set To :_\n*"..matches[2].."*\n\n*You can use :*\n_{gpname} Group Name_\n_{rules} ➣ Show Group Rules_\n_{name} ➣ New Member First Name_\n_{username} ➣ New Member Username_"
+  return "_Welcome Msg Set sucss 📍_\n*"..matches[2].."*\n_لرؤيه القوانين اكتب القوانين_"
        else
-		return "💾┋تم حفظ الترحيب : \n"..matches[2].."\n1 | لأضهار اسم المجموعة {gpname}\n 2| لأضهار المعرف {username}\n 3| لأضهار الاسم {name}\n 4| لأضهار القوانين {rules}"
+		return "💾┋تم حفظ الترحيب : \n"..matches[2].."\n☺️| لأضهار القوانين اكتب القوانين"
         end
      end
 	end
@@ -3283,10 +3283,10 @@ user_name = "@"..check_markdown(data.username_)
 else
 user_name = ""
 end
-		local welcome = welcome:gsub("{rules}", rules)
+		local welcome = welcome:gsub("{gprules}", rules)
 		local welcome = welcome:gsub("{name}", check_markdown(data.first_name_))
-		local welcome = welcome:gsub("{username}", user_name)
-		local welcome = welcome:gsub("{gpname}", arg.gp_name)
+		local welcome = welcome:gsub("{user}", user_name)
+		local welcome = welcome:gsub("{gpn}", arg.gp_name)
 		tdcli.sendMessage(arg.chat_id, arg.msg_id, 0, welcome, 0, "md")
 	end
 	if data[tostring(chat)] and data[tostring(chat)]['settings'] then
@@ -3363,6 +3363,8 @@ patterns ={
 "^([https?://w]*.?telegram.me/joinchat/%S+)$",
 "^(ضع ترحيب) (.*)$",
 "^(الترحيب) (.*)$",
+"^[#!/](name) (.*)$",
+
 
 },
 run=run,

@@ -1,5 +1,5 @@
 
-🔹 # smile_TEAM
+🔹 # ali-_TEAM
 🔹 # [porgramer2017](https://telegram.me/porgramer2017)
 
 
@@ -34,7 +34,7 @@ cd ali-
 
 🔹" رابعا
 
-chmod +x smile.sh
+chmod +x ali-.sh
 
 🔹" خامسا
 

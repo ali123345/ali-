@@ -203,7 +203,16 @@ function match_plugin(plugin, plugin_name, msg)
 end
 _config = load_config()
 load_plugins()
-
+"banhammer",
+"cleanbot",
+"dell",
+"groupmanager",
+"me",
+"reply",
+"tools",
+"plugins",
+"msg-checks",
+"muteall",
  function var_cb(msg, data)
   -------------Get Var------------
 	bot = {}

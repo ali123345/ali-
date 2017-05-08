@@ -35,7 +35,7 @@ function print_logo() {
 function logo_play() {
     declare -A txtlogo
     seconds="0.010"
-    txtlogo[1]=اهلا بك في سورس SMILE
+    txtlogo[1]=اهلا بك في سورس ali-
     txtlogo[2]=اي شي تحتاج تعال اطلب وتدلل 
     txtlogo[3]=اذا ممكن تقيمون السورس طلب وليس امر
     txtlogo[4]=بلتوفيق
@@ -66,8 +66,8 @@ if [ ! -f ./tg/tgcli ]; then
    echo -e "     >>>>                       We Are team                                           "
    echo -e "     >>>>                       We Are best                                           "
    echo -e "     >>>>                       We Are iraq dev                                       "
-   echo -e "     >>>>                       team smile @porgramer2017                             "
-   echo -e "     >>>>                       team smile @iq_100k                                   "
+   echo -e "     >>>>                       team ali - @wwwala                             "
+   echo -e "     >>>>                                                        "
    echo -e "\033[0;00m"
    echo -e "\e[36m"
    logo_play

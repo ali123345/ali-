@@ -4,8 +4,8 @@ do local _ = {
       0
     },
     {
-      189161839,
-      "@iq\\_313k"
+      253847556,
+      "@wwwala"
     }
   },
   disabled_channels = {},
@@ -26,7 +26,7 @@ do local _ = {
     data = "./data/moderation.json"
   },
   sudo_users = {
-    115124695,
+    363184618,
     0
   }
 }
